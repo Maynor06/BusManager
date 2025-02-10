@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Example {
 
+    // metodo para saber si 'x' asiento esta ocupado.
+    // hace la comparacion y si el asiento su atributo tipo Usuario es diferente a null significa que el asiento esta ocupado y nos devuelve true
     public static boolean isOcupado(int id, Asientos[] asientos){
         Asientos asientoOcupado = null;
 
@@ -23,6 +25,8 @@ public class Example {
         }
     }
 
+    // metodo para saber conocer los datos de quien esta ocupando el asiento 'x'
+    // nos imprime los datos del Usuario que esta ocupando tal asiento.
     public static void obtenerUsuario(int id, Asientos[] asientos ){
         Usuarios usuario = null;
         Asientos asientoOcupado = null;
@@ -46,6 +50,7 @@ public class Example {
         }
     }
 
+    // metodo que nos devuelve los asiento que estan al lado de la ventana.
     public static void obtenerAsientosVentana(Asientos[] asientos){
         for (Asientos asiento : asientos){
             if(asiento.getType().equals("Ventana")){
@@ -54,6 +59,7 @@ public class Example {
         }
     }
 
+    // metodo que nos devuelve los asientos que estan al lado del pasillo.
     public static void obtenerAsientosPasillo(Asientos[] asientos){
         for (Asientos asiento : asientos){
             if(asiento.getType().equals("Pasillo")){
@@ -63,14 +69,17 @@ public class Example {
     }
 
     public static void main(String[] args) {
+        // Creando objetos del tipo Usuarios para que acupen los asientos
         Usuarios user1 = new Usuarios("Juan", "Pérez");
         Usuarios user2 = new Usuarios("Ana", "López");
         Usuarios user3 = new Usuarios("Carlos", "Ramírez");
         Usuarios user4 = new Usuarios("Sofía", "Martínez");
         Usuarios user5 = new Usuarios("Luis", "González");
 
+        // inicializacion del Array de Asientos.
         Asientos[] asientos = new Asientos[10];
 
+        // agregando registros al Array de asientos.
         asientos[0] = new Asientos(1, user1, "Ventana");
         asientos[1] = new Asientos(2, null, "Pasillo");
         asientos[2] = new Asientos(3, user2, "Ventana");
